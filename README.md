@@ -1,4 +1,4 @@
-# Ferramentas informática Facebook é proteger eu o perfil
+# As ferramentas do Facebook são usadas para proteger o seu perfil
 
 
 # Commandos
