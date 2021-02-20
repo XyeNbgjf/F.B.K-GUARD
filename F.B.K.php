@@ -1,8 +1,18 @@
 <?php
-$token = "EAAAAUaZA8jlABALb8ZAUxmqOkqUibVke7lik0sKQZCME8GX0ZCnkj2SSHn5r0BAZBm02mNdzamFZAF5flKiQVgpOokPktTZAi8jiMCIAhJRrOtaXH9zSxRiaC2ZC3NooZBsn9LwMBlAW43zKJUNN1VDJmn1AeuT3rvtrmZBm0z6GiFVnWxONT2ubki1uTcFuNAjT0ZD";
+// geci return (csak a consolehez)
+$biru = "\e[34m";
+$kuning = "\e[33m";
+$cyan = "\e[96m";
+$magenta = "\e[35m";
+$hijau = "\e[92m";
+$merah = "\e[91m";
+echo "$hijau  ×============================================×\n";
+echo "$hijau  [  Author: José fernado  ]              ]\n";
+echo "$hijau  ×============================================ï¿½\n\n";
+echo "$input $magenta FB ACCOUNT GUARD TESO ERTED>> : ";
+$token= trim(fgets(STDIN));
 $md5 = md5(time());
 $hash = substr($md5, 0, 8)."-".substr($md5, 8, 4)."-".substr($md5, 12, 4)."-".substr($md5, 16, 4)."-".substr($md5, 20, 12);
-
 function curl($url, $post=null) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -17,7 +27,6 @@ function curl($url, $post=null) {
     curl_close($ch);
     return $exec;
 }
-
 $me = json_decode(curl("https://graph.facebook.com/me?fields=id&access_token=".$token));
 if($me && $me->id) {
     $var = "{\"0\":{\"is_shielded\":true,\"session_id\":\"$hash\",\"actor_id\":\"$me->id\",\"client_mutation_id\":\"$hash\"}}";
@@ -33,8 +42,7 @@ if($me && $me->id) {
         "fb_api_caller_class" => "IsShieldedSetMutation",
         "access_token" => $token
     )));
-
-    if($hajar->data->is_shielded_set->is_shielded) echo "Success";
-    else "Failed";
+    if($hajar->data->is_shielded_set->is_shielded) echo "$cyan Status ==>Enviada com sucesso";
+    else "fuck it :( GECI NÉZD MEG A FASZBUK TOKENED";
 }
 ?>
