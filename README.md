@@ -14,7 +14,7 @@ pkg install git
 
 termux-setup-storage
 
-git clone https://github.com/nbgdaramos/F.B.K-GUARD
+git clone https://github.com/XyeNbgjf/F.B.K-GUARD
 
 cd F.B.K-GUARD
 
